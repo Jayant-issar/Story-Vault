@@ -1,0 +1,6 @@
+/* styles.css */
+.bg-image {
+    background-image: url("../public/lan1.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
