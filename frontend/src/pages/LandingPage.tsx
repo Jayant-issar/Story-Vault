@@ -6,7 +6,7 @@ function LandingPage() {
   return (
     <div className=" h-screen bg-image flex justify-center items-center " >
         <div className=" text-white bg-black bg-opacity-45 h-full w-full flex justify-center items-center">
-            <div className=" border-2 border-black w-3/5 mb-10" >
+            <div className=" w-3/5 mb-10" >
                 <div className=" text-yellow-200 font-semibold font-mono flex justify-center text-opacity-60 m-6">
                     DEVELOPED BY JAYANT ISSAR
                 </div>
