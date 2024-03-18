@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#loginbutton {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: #0C2D57 solid 0.15em;
+    border-radius: 0.25em;
+    color: #0C2D57;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+}
+  
+#loginbutton p {
+z-index: 1;
+}
+
+#loginbutton:hover {
+color: #212121;
+}
+
+#loginbutton:active {
+border-color: #0C2D57;
+}
+
+#loginbutton::after, #loginbutton::before {
+content: "";
+position: absolute;
+width: 9em;
+aspect-ratio: 1;
+background: #0C2D57;
+opacity: 50%;
+border-radius: 50%;
+transition: transform 500ms, background 300ms;
+}
+
+#loginbutton::before {
+left: 0;
+transform: translateX(-8em);
+}
+
+#loginbutton::after {
+right: 0;
+transform: translateX(8em);
+}
+
+#loginbutton:hover:before {
+transform: translateX(-1em);
+}
+
+#loginbutton:hover:after {
+transform: translateX(1em);
+}
+
+#loginbutton:active:before,
+#loginbutton:active:after {
+background: #0C2D57;
+}

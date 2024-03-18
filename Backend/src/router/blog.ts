@@ -49,12 +49,12 @@ blogRouter.post('/',async (c)=>{
         message: "invalid inputs for creating blog"
     });
     }
-
     const blog = await prisma.post.create({
         data:{
             title: body.title,
             context: body.context,
             authorId: userId
+
         }
     })
 
@@ -103,7 +103,18 @@ blogRouter.get('/bulk',async(c)=>{
         datasourceUrl: DATABASE_URL,
     }).$extends(withAccelerate())
 
-    const allBlogs = await prisma.post.findMany();
+    const allBlogs = await prisma.post.findMany({
+        select : {
+            context:true,
+            id:true,
+            title: true,
+            author:{
+                select:{
+                    name:true
+                }
+            }
+        }
+    });
 
     return c.json({
         allBlogs: allBlogs
@@ -123,6 +134,14 @@ blogRouter.get('/:id',async(c)=>{
             where:{
                 //@ts-ignore
                 id: blogId
+            },
+            select:{
+                id:true,
+                title:true,
+                context:true,
+                published:true,
+                authorId:true,
+                author:true
             }
         })
         return c.json({

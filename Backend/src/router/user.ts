@@ -11,6 +11,7 @@ export const userRouter = new Hono();
 userRouter.post('/signup',async (c)=>{ //  c here stands for context, hono gives us a single object
     
     const body  = await c.req.json() // way to get body in hono
+    console.log(body);
     
     //@ts-ignore
     const { error } = signupInput.safeParse(body);
@@ -41,6 +42,8 @@ userRouter.post('/signup',async (c)=>{ //  c here stands for context, hono gives
       })
     
       const token = await sign({id: author.id},SECRET_KEY)
+      console.log("user created sucessfully");
+      
       return c.json({
         message: "user created",
         name: author.name,
@@ -100,6 +103,6 @@ userRouter.post('/signin',async (c)=>{
       })
     }
   
-    return c.text("ssdf")
+    
     
 })
