@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 function LandingPage() {
     const navigate = useNavigate()
   return (
-    <div className=" h-screen bg-[url('./landingPage.jpeg')] bg-contain flex justify-center items-center " >
+    <div className=" h-screen bg-[url('./lan2.jpeg')] bg-contain flex justify-center items-center " >
         <div className=" text-white bg-black bg-opacity-45 h-full w-full flex justify-center items-center">
             <div className=" border-2 border-black w-3/5 mb-10" >
                 <div className=" text-yellow-200 font-semibold font-mono flex justify-center text-opacity-60 m-6">
